@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Hangman Game</title>
+</head>
+<body>
+    <main>
+        <h1>Hangman Game</h1> 
+        <h2>By Adrian Delgado</h2>
+        <h3>Tries left: 9</h3>
+        <div class="hangman">
+
+        </div>
+        <div class="word">
+
+        </div>
+        <div class="letters-used">
+
+        </div>
+        <div class="letters-to-guess">
+            <button onclick="">A</button>
+            <button onclick="">B</button>
+            <button onclick="">C</button>
+            <button onclick="">D</button>
+            <button onclick="">E</button>
+            <button onclick="">F</button>
+            <button onclick="">G</button>
+            <button onclick="">H</button>
+            <button onclick="">I</button>
+            <button onclick="">J</button>
+            <button onclick="">K</button>
+            <button onclick="">L</button>
+            <button onclick="">M</button>
+            <button onclick="">N</button>
+            <button onclick="">O</button>
+            <button onclick="pickedLetter(this);">P</button>
+            <button onclick="">Q</button>
+            <button onclick="">R</button>
+            <button onclick="">S</button>
+            <button onclick="">T</button>
+            <button onclick="">U</button>
+            <button onclick="">V</button>
+            <button onclick="">W</button>
+            <button onclick="">X</button>
+            <button onclick="">Y</button>
+            <button onclick="pickedLetter(this);">Z</button>
+        </div>
+        <div class="choose-difficulty">
+            <button onclick="amountOfLines(pickDifficulty(this));">Easy</button>
+            <button onclick="amountOfLines(pickDifficulty(this));">Hard</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 { 
+    text-align: center;
+}
+
+.flex {
+
+}
+
+.word {
+    text-align: center;
+}
+
+.choose-difficulty {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.letters-to-guess {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
