@@ -16,6 +16,20 @@ h2 {
 
 }
 
+.game {
+    max-width: 737px;
+    border: 3px solid black;
+    margin: 0 auto;
+}
+
+.tries-left {
+    display: none;
+}
+
+.hide-elements {
+    display: none;
+}
+
 .word {
     text-align: center;
     letter-spacing: .4em;
@@ -32,4 +46,9 @@ h2 {
 
 button {
     cursor: pointer;
+}
+
+.restart {
+    display: none;
+    text-align: center;
 }

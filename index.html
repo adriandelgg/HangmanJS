@@ -12,8 +12,15 @@
     <main>
         <h1>Hangman Game</h1> 
         <h2>By Adrian Delgado</h2>
-        <h3>Tries left: <span id="counter">9</span></h3>
+        <div class="choose-difficulty">
+            <button onclick="amountOfLines(pickDifficulty(this));">Easy</button>
+            <button onclick="amountOfLines(pickDifficulty(this));">Hard</button>
+        </div>
+        <div class="game-end">
+            <button class="restart" onclick="restartGame();">Play again!</button>
+        </div>
         <div class="game">
+            <h3 class="tries-left">Tries left: <span id="counter">9</span></h3>
             <div class="hangman">
 
             </div>
@@ -48,10 +55,6 @@
                 <button onclick="pickedLetter(this);">X</button>
                 <button onclick="pickedLetter(this);">Y</button>
                 <button onclick="pickedLetter(this);">Z</button>
-            </div>
-            <div class="choose-difficulty">
-                <button onclick="amountOfLines(pickDifficulty(this));">Easy</button>
-                <button onclick="amountOfLines(pickDifficulty(this));">Hard</button>
             </div>
         </div>
     </main>

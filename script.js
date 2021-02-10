@@ -1,17 +1,17 @@
 // Hangman Game
-const wordsEasy = ['hello', 'tomato','apple', 'bacon', 'chair', 'rude', 'yummy', 'avocado'];
+const wordsEasy = ['hello', 'tomato', 'apple', 'bacon', 'chair', 'rude', 'yummy', 'avocado']; //
 const wordsHard = ['delicious', 'successful', 'president', 'anticipate', 'careful', 'hamburger', 'crypto'];
 
 // Selectors
-const entireGameView = document.querySelector('.game');
 const hangman = document.querySelector('.hangman');
 const word = document.querySelector('.word');
 const lettersUsed = document.querySelector('.letters-used');
 const lettersToGuess = document.querySelector('.letters-to-guess');
+const triesLeft = document.querySelector('.tries-left');
 const difficulty = document.querySelector('.choose-difficulty');
 const counter = document.getElementById('counter');
-const gameOver = document.createElement('h2');
-gameOver.innerHTML = 'Game Over! <br>Want to try again?';
+const restart = document.querySelector('.restart');
+
 
 let randomWord; // Becomes the random word in an array
 let wordInLines; // Becomes the word length in '_' as an array
@@ -20,7 +20,8 @@ let amountToWin;
 let countToWin = 0;
 
 const pickDifficulty = obj => {
-    lettersToGuess.style.display = 'initial'; // Makes buttons & word appear
+    triesLeft.style.display = 'initial';  // Makes buttons, tries, & word appear
+    lettersToGuess.style.display = 'initial';
     difficulty.hidden = true; // Hides the Easy/Hard buttons
     
     if (obj.innerHTML == 'Easy') { // Create new element with lines the length of the word
@@ -41,7 +42,7 @@ const amountOfLines = obj => {
 }
 
 const pickedLetter = letter => {
-    letter.hidden = true; // Hides selected letter after click
+    letter.style.visibility = 'hidden'; // Hides selected letter after click
     lettersUsed.innerHTML += letter.innerHTML + ', ';
     
     // Checks if the letter is in the word. If it is, it will add it to the page.
@@ -50,30 +51,46 @@ const pickedLetter = letter => {
         for (let i = 0; i < randomWord.length; i++) {
             
             if (randomWord[i] == letter.innerHTML) {
+                if (word.innerHTML.includes(letter.innerHTML)) { // Check to see if the letter appears twice
+                    countToWin++;
+                }
                 wordInLines[i] = randomWord[i];
                 word.innerHTML = wordInLines.join('');
             }
         }
     } else {
         countDown--;
-        counter.innerHTML = countDown;
+        counter.innerHTML = countDown; 
+        addHangman();
     }
     gameEnd();
 }
 
+const addHangman = () => {
+    
+}
+
+// Game end
+const entireGameView = document.querySelector('.game');
+const gameEndDiv = document.querySelector('.game-end');
+let gameOver = document.createElement('h2');
 const gameEnd = () => {
-    if (countToWin === randomWord.length) {
-        console.log('You Win!');
-    }
-    else if (countDown === 0) {
+    
+    if (countToWin === amountToWin) {
+        entireGameView.classList.add('hide-elements');
+        gameOver.innerHTML = `Congratulations!<br>You won!🥳🎉<br>The word was: ${randomWord.join('')}`;
+        gameEndDiv.appendChild(gameOver);
+        restart.style.display = 'initial';
+    
+    } else if (countDown === 0) {
         // Needs Fixed
-        entireGameView.appendChild(gameOver);
-        difficulty.hidden = false;
+        entireGameView.classList.add('hide-elements');
+        gameOver.innerHTML = `Aw, nice try!<br>The word was: ${randomWord.join('')}<br>Want to try again?😄`;
+        gameEndDiv.appendChild(gameOver);
+        restart.style.display = 'initial';
     }
 }
-console.log(lettersUsed.innerHTML);
 
-
-// Tests
-
-// amountOfLines();
+const restartGame = () => {
+    window.location.reload();
+}
