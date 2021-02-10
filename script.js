@@ -15,9 +15,9 @@ const restart = document.querySelector('.restart');
 
 let randomWord; // Becomes the random word in an array
 let wordInLines; // Becomes the word length in '_' as an array
-let countDown = 9;
-let amountToWin;
-let countToWin = 0;
+let countDown = 9; // When 0, user loses
+let amountToWin; // Becomes the length of the random word
+let countToWin = 0; // Increases with every right answer
 
 const pickDifficulty = obj => {
     triesLeft.style.display = 'initial';  // Makes buttons, tries, & word appear
@@ -60,14 +60,45 @@ const pickedLetter = letter => {
         }
     } else {
         countDown--;
+        addToHangman++;
         counter.innerHTML = countDown; 
         addHangman();
     }
     gameEnd();
 }
 
+let addToHangman = 0;
 const addHangman = () => {
-    
+    switch (addToHangman) {
+        case 1:
+            document.querySelector('.base').classList.remove('hide-elements');
+            break;
+        case 2:
+            document.querySelector('.support').classList.remove('hide-elements');
+            break;
+        case 3:
+            document.querySelector('.long-pole').classList.remove('hide-elements');
+            break;
+        case 4:
+            document.querySelector('.rope').classList.remove('hide-elements');
+            document.querySelector('.head').classList.remove('hide-elements');
+            break;
+        case 5:
+            document.querySelector('.body').classList.remove('hide-elements');
+            break;
+        case 6:
+            document.querySelector('.arm1').classList.remove('hide-elements');
+            break;
+        case 7:
+            document.querySelector('.arm2').classList.remove('hide-elements');
+            break;
+        case 8:
+            document.querySelector('.leg1').classList.remove('hide-elements');
+            break;
+        case 9:
+            document.querySelector('.leg2').classList.remove('hide-elements');
+            break;
+    }
 }
 
 // Game end
@@ -78,15 +109,16 @@ const gameEnd = () => {
     
     if (countToWin === amountToWin) {
         entireGameView.classList.add('hide-elements');
+        hangman.classList.add('hide-elements');
         gameOver.innerHTML = `Congratulations!<br>You won!🥳🎉<br>The word was: ${randomWord.join('')}`;
-        gameEndDiv.appendChild(gameOver);
+        gameEndDiv.prepend(gameOver);
         restart.style.display = 'initial';
     
     } else if (countDown === 0) {
-        // Needs Fixed
         entireGameView.classList.add('hide-elements');
+        gameOver.classList.add('game-end-text');
         gameOver.innerHTML = `Aw, nice try!<br>The word was: ${randomWord.join('')}<br>Want to try again?😄`;
-        gameEndDiv.appendChild(gameOver);
+        gameEndDiv.prepend(gameOver);
         restart.style.display = 'initial';
     }
 }

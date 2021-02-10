@@ -13,48 +13,60 @@
         <h1>Hangman Game</h1> 
         <h2>By Adrian Delgado</h2>
         <div class="choose-difficulty">
+            <h3>Choose your difficulty!</h3>
             <button onclick="amountOfLines(pickDifficulty(this));">Easy</button>
             <button onclick="amountOfLines(pickDifficulty(this));">Hard</button>
         </div>
         <div class="game-end">
             <button class="restart" onclick="restartGame();">Play again!</button>
         </div>
+        <div class="hangman">
+            <div class="base hide-elements"></div>
+            <div class="support hide-elements"></div>
+            <div class="long-pole hide-elements"></div>
+            <div class="rope hide-elements"></div>
+            <div class="head hide-elements"></div>
+            <div class="body hide-elements"></div>
+            <div class="arm1 hide-elements"></div>
+            <div class="arm2 hide-elements"></div>
+            <div class="leg1 hide-elements"></div>
+            <div class="leg2 hide-elements"></div>
+        </div>
         <div class="game">
             <h3 class="tries-left">Tries left: <span id="counter">9</span></h3>
-            <div class="hangman">
+            <div class="letters-container">
+                <div class="word">
 
-            </div>
-            <div class="word">
-
-            </div>
-            <div class="letters-used"></div>
-            <div class="letters-to-guess">
-                <button onclick="pickedLetter(this);">A</button>
-                <button onclick="pickedLetter(this);">B</button>
-                <button onclick="pickedLetter(this);">C</button>
-                <button onclick="pickedLetter(this);">D</button>
-                <button onclick="pickedLetter(this);">E</button>
-                <button onclick="pickedLetter(this);">F</button>
-                <button onclick="pickedLetter(this);">G</button>
-                <button onclick="pickedLetter(this);">H</button>
-                <button onclick="pickedLetter(this);">I</button>
-                <button onclick="pickedLetter(this);">J</button>
-                <button onclick="pickedLetter(this);">K</button>
-                <button onclick="pickedLetter(this);">L</button>
-                <button onclick="pickedLetter(this);">M</button>
-                <button onclick="pickedLetter(this);">N</button>
-                <button onclick="pickedLetter(this);">O</button>
-                <button onclick="pickedLetter(this);">P</button>
-                <button onclick="pickedLetter(this);">Q</button>
-                <button onclick="pickedLetter(this);">R</button>
-                <button onclick="pickedLetter(this);">S</button>
-                <button onclick="pickedLetter(this);">T</button>
-                <button onclick="pickedLetter(this);">U</button>
-                <button onclick="pickedLetter(this);">V</button>
-                <button onclick="pickedLetter(this);">W</button>
-                <button onclick="pickedLetter(this);">X</button>
-                <button onclick="pickedLetter(this);">Y</button>
-                <button onclick="pickedLetter(this);">Z</button>
+                </div>
+                <div class="letters-used"></div>
+                <div class="letters-to-guess">
+                    <button onclick="pickedLetter(this);">A</button>
+                    <button onclick="pickedLetter(this);">B</button>
+                    <button onclick="pickedLetter(this);">C</button>
+                    <button onclick="pickedLetter(this);">D</button>
+                    <button onclick="pickedLetter(this);">E</button>
+                    <button onclick="pickedLetter(this);">F</button>
+                    <button onclick="pickedLetter(this);">G</button>
+                    <button onclick="pickedLetter(this);">H</button>
+                    <button onclick="pickedLetter(this);">I</button>
+                    <button onclick="pickedLetter(this);">J</button>
+                    <button onclick="pickedLetter(this);">K</button>
+                    <button onclick="pickedLetter(this);">L</button>
+                    <button onclick="pickedLetter(this);">M</button>
+                    <button onclick="pickedLetter(this);">N</button>
+                    <button onclick="pickedLetter(this);">O</button>
+                    <button onclick="pickedLetter(this);">P</button>
+                    <button onclick="pickedLetter(this);">Q</button>
+                    <button onclick="pickedLetter(this);">R</button>
+                    <button onclick="pickedLetter(this);">S</button>
+                    <button onclick="pickedLetter(this);">T</button>
+                    <button onclick="pickedLetter(this);">U</button>
+                    <button onclick="pickedLetter(this);">V</button>
+                    <button onclick="pickedLetter(this);">W</button>
+                    <button onclick="pickedLetter(this);">X</button>
+                    <button onclick="pickedLetter(this);">Y</button>
+                    <button onclick="pickedLetter(this);">Z</button>
+                </div>
             </div>
         </div>
     </main>

@@ -6,20 +6,38 @@
 
 h1 {
     text-align: center;
+    margin-top: .6em;
 }
 
 h2 { 
     text-align: center;
+    margin-top: .2em;
 }
 
-.flex {
+button {
+    cursor: pointer;
+    padding: .1em .2em;
+}
 
+.choose-difficulty {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.choose-difficulty button {
+    margin: .5em .3em;
+    padding: .3em .7em;
+    font-size: 1rem;
 }
 
 .game {
-    max-width: 737px;
-    border: 3px solid black;
-    margin: 0 auto;
+    max-width: 650px;
+    margin: 1em auto 0;
+    
+}
+
+.game-end-text {
+    margin-top: 8em;
 }
 
 .tries-left {
@@ -35,20 +53,127 @@ h2 {
     letter-spacing: .4em;
 }
 
-.choose-difficulty {
-    text-align: center;
-    margin: 0 auto;
+.letters-container {
+    margin-top: 10em;
+}
+
+.letters-used {
+    margin: 1em .5em;
 }
 
 .letters-to-guess {
     display: none;
+    margin-top: 2em;
 }
 
-button {
-    cursor: pointer;
+.game-end {
+    text-align: center;
 }
 
 .restart {
     display: none;
-    text-align: center;
+}
+
+/* ===============
+    Stick Figure 
+   =============== */
+
+.head {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 4px solid black;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-25px, -34px);
+}
+
+.body {
+    border-left: 4px solid black;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+}
+
+.leg1 {
+    border-left: 4px solid black;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: skew(25deg, 0) translate(-10px, 46px);
+}
+
+.leg2 {
+    border-left: 4px solid black;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: skew(-25deg, 0) translate(10px, 46px);
+}
+
+.arm1 {
+    border-left: 4px solid black;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: skew(-25deg, 0) translate(-8px, -1px);
+}
+
+.arm2 {
+    border-left: 4px solid black;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: skew(25deg, 0) translate(8px, -1px);
+}
+
+.base {
+    border-bottom: 4px solid black;
+    width: 95px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 217px;
+    transform: translate(50px, 110px);
+}
+
+.support {
+    border-left: 4px solid black;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: translate(95px, -70px);
+}
+
+.long-pole {
+    border-bottom: 4px solid black;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: translate(-2px, -70px);
+}
+
+.rope {
+    border-left: 4px solid black;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 200px;
+    transform: translate(-2px, -70px);
 }
