@@ -18,6 +18,7 @@ h2 {
 
 .word {
     text-align: center;
+    letter-spacing: .4em;
 }
 
 .choose-difficulty {
