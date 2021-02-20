@@ -34,7 +34,7 @@ const pickDifficulty = obj => {
 }
 
 // Generates the amount of lines to make for the word to guess
-const amountOfLines = obj => {
+function amountOfLines(obj) {
     let wordToLines = obj;
     wordToLines = '_'.repeat(wordToLines.length);
     wordInLines = wordToLines.split('');
